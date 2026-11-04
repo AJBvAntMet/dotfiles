@@ -1,1 +1,2 @@
 .aws/credentials
+.cdk/cache/accounts_partitions.json
