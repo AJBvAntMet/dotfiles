@@ -1,10 +1,13 @@
 [user]
 	email = anthony.metcalf1@gmail.com
 	name = Anthony Metcalf
+	signingkey = 0F2150EA
 [pull]
 	rebase = true
 [core]
-    pager = bat
+	pager = bat
+[commit]
+	gpgsign = true
 
 [interactive]
     diffFilter = delta --color-only
