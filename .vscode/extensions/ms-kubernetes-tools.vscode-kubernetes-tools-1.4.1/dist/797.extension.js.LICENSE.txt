@@ -1,0 +1,5 @@
+/*! @azure/msal-common v16.5.2 2026-04-28 */
+
+/*! @azure/msal-node v5.1.5 2026-04-28 */
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */

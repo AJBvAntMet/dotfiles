@@ -1,0 +1,106 @@
+{
+	"name": "markdown-checkbox",
+	"version": "0.4.0",
+	"displayName": "Markdown Checkboxes",
+	"description": "Adds checkbox support to the built-in markdown preview",
+	"keywords": [
+		"markdown",
+		"checkbox",
+		"checkboxes",
+		"github",
+		"task list"
+	],
+	"icon": "logo/logox128.png",
+	"publisher": "bierner",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/mjbvz/vscode-markdown-checkboxes.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mjbvz/vscode-markdown-checkboxes/issues"
+	},
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"extensionKind": [
+		"workspace"
+	],
+	"contributes": {
+		"markdown.markdownItPlugins": true,
+		"markdown.previewStyles": [
+			"checkboxes.css"
+		],
+		"notebookRenderer": [
+			{
+				"id": "bierner.markdown-it-markdown-checkbox",
+				"displayName": "Markdown it Checkbox renderer",
+				"entrypoint": {
+					"extends": "vscode.markdown-it-renderer",
+					"path": "./notebook-out/index.js"
+				}
+			}
+		],
+		"configuration": {
+			"title": "Markdown Checkboxes Options",
+			"properties": {
+				"markdown-checkboxes.enable": {
+					"type": "boolean",
+					"description": "Enable checkboxes in markdown preview.",
+					"default": true
+				},
+				"markdown-checkboxes.label": {
+					"type": "boolean",
+					"markdownDescription": "Wrap the rendered list items in a `<label>` element.",
+					"default": false
+				},
+				"markdown-checkboxes.labelAfter": {
+					"type": "boolean",
+					"markdownDescription": "Adds the label after the checkbox. Only applies when `#markdown-checkboxes.label#` is set to `true`.",
+					"default": false
+				}
+			}
+		}
+	},
+	"main": "./dist/index.js",
+	"browser": "./dist/web/index.js",
+	"scripts": {
+		"watch": "webpack --watch --config ./build/webpack.config.js",
+		"package": "webpack --mode production --config ./build/webpack.config.js",
+		"lint": "eslint -c .eslintrc.js --ext .ts src",
+		"vscode:prepublish": "npm run package ; npm run package-web ; npm run build-notebook",
+		"watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+		"package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+		"build-notebook": "node ./esbuild-notebook"
+	},
+	"dependencies": {
+		"@types/vscode-notebook-renderer": "^1.72.0",
+		"markdown-it-task-lists": "^2.1.1"
+	},
+	"devDependencies": {
+		"@types/markdown-it": "^12.0.1",
+		"@types/vscode": "^1.59.0",
+		"esbuild": "^0.15.13",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.8.4",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.8.0"
+	},
+	"__metadata": {
+		"id": "b0db4123-c5d9-4f45-bd2e-70738ebbb304",
+		"publisherId": "f164f116-e2aa-496b-84dc-2451248e8beb",
+		"publisherDisplayName": "Matt Bierner",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1727441101703,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 233965
+	}
+}

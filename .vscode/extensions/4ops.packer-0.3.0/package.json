@@ -1,0 +1,95 @@
+{
+	"name": "packer",
+	"displayName": "Packer",
+	"description": "Packer configuration language support",
+	"version": "0.3.0",
+	"icon": "icon.png",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"packer",
+		"hashicorp",
+		"hcl"
+	],
+	"publisher": "4ops",
+	"author": {
+		"name": "Anton Kulikov"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/4ops/vscode-language-packer.git"
+	},
+	"bugs": {
+		"url": "https://github.com/4ops/vscode-language-packer/issues"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "packer",
+				"aliases": [
+					"Packer"
+				],
+				"extensions": [
+					".pkr.hcl"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "packervars",
+				"aliases": [
+					"Packer Variables",
+					"Packer Vars",
+					"PackerVars"
+				],
+				"extensions": [
+					".pkrvars.hcl"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "packer",
+				"scopeName": "source.packer",
+				"path": "./grammars/packer.json"
+			},
+			{
+				"language": "packervars",
+				"scopeName": "source.packervars",
+				"path": "./grammars/packervars.json"
+			}
+		]
+	},
+	"scripts": {
+		"ci-build": "vsce package",
+		"build": "vsce package",
+		"compile-packer": "yq eval grammars/packer.yaml --tojson > grammars/packer.json",
+		"compile-packervars": "yq eval grammars/packervars.yaml --tojson > grammars/packervars.json",
+		"compile": "npm run compile-packer && npm run compile-packervars",
+		"pretest": "npm run compile -s",
+		"prebuild": "npm test -s",
+		"preversion": "git add -A .",
+		"postversion": "npm run push -s",
+		"prepush": "git push",
+		"push": "git push --tags",
+		"postpush": "echo vsce publish",
+		"test": "echo No tests are implemented",
+		"version": "npm run build -s"
+	},
+	"devDependencies": {
+		"vsce": "^1.99.0"
+	},
+	"dependencies": {},
+	"__metadata": {
+		"id": "845ae667-6113-4243-b0d5-4610762b2b33",
+		"publisherId": "db4dabe0-34d0-481a-884f-371ffc5cb27f",
+		"publisherDisplayName": "Anton Kulikov",
+		"installedTimestamp": 1631626734226,
+		"size": 54065
+	}
+}

@@ -1,0 +1,119 @@
+{
+	"name": "cdk-snippets",
+	"version": "0.1.3",
+	"publisher": "mklein",
+	"author": {
+		"name": "Mauricio Klein"
+	},
+	"engines": {
+		"vscode": "^1.49.0"
+	},
+	"bugs": {
+		"url": "https://github.com/mauricioklein/vscode-cdk-snippets/issues"
+	},
+	"homepage": "https://github.com/mauricioklein/vscode-cdk-snippets",
+	"license": "SEE LICENSE IN LICENSE",
+	"displayName": "CDK Snippets",
+	"description": "Unofficial set of snippets for CDK",
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"cdk"
+	],
+	"icon": "media/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mauricioklein/vscode-cdk-snippets.git"
+	},
+	"scripts": {
+		"build": "vsce package",
+		"commit": "cz",
+		"update-catalog": "node bin/update-catalog.js",
+		"release": "standard-version"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./snippets/core.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/iam.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/dynamodb.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/lambda.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/s3.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/kms.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/sqs.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/sns.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/sns-subscription.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/api-gateway.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/step-functions.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/step-functions-tasks.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/events.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/events-targets.code-snippets"
+			}
+		]
+	},
+	"devDependencies": {
+		"cz-conventional-changelog": "^3.3.0",
+		"standard-version": "^9.0.0",
+		"vsce": "^1.81.1"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"__metadata": {
+		"id": "08ca3c8b-da8a-4403-9333-61afba1fa725",
+		"publisherId": "b2beab4c-e473-45e3-8dc6-c5970d9590ae",
+		"publisherDisplayName": "Mauricio Klein",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1727093870670,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 2018983
+	}
+}
