@@ -115,5 +115,6 @@ if ! shopt -oq posix; then
   fi
 fi
 PATH=$PATH:/home/ametca/.local/bin
+export EDITOR=vim
 cd ~/repos
 eval "$(mise activate bash)"
