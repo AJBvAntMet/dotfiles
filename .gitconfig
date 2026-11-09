@@ -1,11 +1,11 @@
 [user]
-	email = anthony.metcalf@ajbell.co.uk
+	email = 176315912+AJBvAntMet@users.noreply.github.com
 	name = Anthony Metcalf
-	signingkey = 0F2150EA
+	signingkey = /home/ametca/.ssh/id_ed25519_signing.pub
 [pull]
 	rebase = true
 [core]
-	pager = bat
+	pager = batcat
 [commit]
 	gpgsign = true
 
